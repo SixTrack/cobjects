@@ -201,3 +201,6 @@ class CObject(object):
         out.append(">")
         return "\n".join(out)
 
+    def to_dict(self):
+        return {ll: getattr(self,ll) for ll in self._fnames}
+
